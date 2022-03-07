@@ -43,6 +43,8 @@ public class LinkedList {
         tail = myNode;
     }
 
+
+
     /**
      * add node at first and change head to the new node
      * Big O(1)
