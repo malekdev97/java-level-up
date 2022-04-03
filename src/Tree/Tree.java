@@ -1,6 +1,6 @@
+package Tree;
 
-
-class TreeBinary
+class Tree
 {
     class Node
     {
@@ -12,26 +12,35 @@ class TreeBinary
             left=right=null;
         }
     }
-    Node root; //root of the tree
+    static Node root; //root of the tree
     //Constructor to intialize root with null
-    TreeBinary()
+    Tree()
     {
         root=null;
     }
     //preorder Traversal of binary tree
-    public static void preorder(Node ptr)
+    public static void preorder(Node node)
     {
-        if(ptr==null)
+        if(node==null)
             return ;
-        System.out.print(ptr.value+" ");
-        preorder(ptr.left);
-        preorder(ptr.right);
+        System.out.print(" "+node.value+",");
+        preorder(node.left);
+        preorder(node.right);
+    }
+
+    public static void postorder(Node node)
+    {
+        if(node != null) {
+            postorder(node.left);
+            postorder(node.right);
+            System.out.print(" "+ node.value + ",");
+        }
     }
     public void insert(int item)
     {
         root =insertNode(root,item); //calling inserNode() method
     }
-    public Node insertNode(Node root,int item)
+    public Node insertNode(Node root, int item)
     {
         if(root==null)     //if root is null create a new Node
         {
@@ -46,17 +55,19 @@ class TreeBinary
     }
     public static void main(String[] args)
     {
-        TreeBinary tree=new TreeBinary();
-        /*inserting node one by one in Binary Search Tree */
-        TreeBinary.insert(30);
-        TreeBinary.insert(50);
-        TreeBinary.insert(55);
-        TreeBinary.insert(45);
-        TreeBinary.insert(10);
-        TreeBinary.insert(5);
-        TreeBinary.insert(15);
-        TreeBinary.insert(12);
+        Tree tree=new Tree();
+        /*inserting node one by one in Binary Search Tree.Tree */
+        tree.insert(30);
+        tree.insert(50);
+        tree.insert(45);
+        tree.insert(55);
+        tree.insert(20);
+        tree.insert(15);
+        tree.insert(25);
+
+
         //print preorder traversal of binary tree
-        TreeBinary.preorder(TreeBinary.root);
+        Tree.preorder(Tree.root);
+        //Tree.postorder(Tree.root);
     }
 }
