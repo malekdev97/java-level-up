@@ -38,7 +38,7 @@ class Tree
     }
     public void insert(int item)
     {
-        root =insertNode(root,item); //calling inserNode() method
+        root =insertNode(root,item); //calling insert Node() method
     }
     public Node insertNode(Node root, int item)
     {
@@ -49,10 +49,11 @@ class Tree
         }
         if(item<root.value)  //if item is less than the current value then traverse left subtree
             root.left= insertNode(root.left,item);
-        else if(item>root.value) //if item is greater than the cureent value then traverse the right subtree
+        else if(item>root.value) //if item is greater than the current value then traverse the right subtree
             root.right=insertNode(root.right,item);
         return root;
     }
+
     public static void main(String[] args)
     {
         Tree tree=new Tree();

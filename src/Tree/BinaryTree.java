@@ -32,5 +32,38 @@ public class BinaryTree {
             parent.right = node;
     }
 
+    public void add(int item) {
+
+        root = addHelper(root, item);
+    }
+
+    public Node addHelper(Node root, int item) {
+
+        if(root == null) {
+            Node node = new Node(item);
+            root = node;
+        }
+        if(root.data > item) {
+            root.left = addHelper(root.left, item);
+        }
+        if(root.left == null && root.right != null) {
+            return root.left;
+        }
+        if(root.left != null && root.right == null) {
+            return root.right;
+        }
+
+        return root;
+    }
+
+    public static void preOrder(Node root) {
+        if(root == null) {
+            return;
+        }
+        System.out.print(root.data + ", ");
+        preOrder(root.left);
+        preOrder(root.right);
+
+    }
 
 }
