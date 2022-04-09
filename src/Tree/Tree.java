@@ -53,6 +53,45 @@ class Tree
             root.right=insertNode(root.right,item);
         return root;
     }
+    public void delete(Integer data) {
+
+        deleteNode(this.root, data);
+    }
+
+    private Node deleteNode(Node root, Integer data) {
+
+        if(root == null) return root;
+
+        if(data < root.getData()) {
+            root.setLeft(deleteNode(root.getLeft(), data));
+        } else if(data > root.getData()) {
+            root.setRight(deleteNode(root.getRight(), data));
+        } else {
+            // node with no leaf nodes
+            if(root.getLeft() == null && root.getRight() == null) {
+                System.out.println("deleting "+data);
+                return null;
+            } else if(root.getLeft() == null) {
+                // node with one node (no left node)
+                System.out.println("deleting "+data);
+                return root.getRight();
+            } else if(root.getRight() == null) {
+                // node with one node (no right node)
+                System.out.println("deleting "+data);
+                return root.getLeft();
+            } else {
+                // nodes with two nodes
+                // search for min number in right sub tree
+                Integer minValue = minValue(root.getRight());
+                root.setData(minValue);
+                root.setRight(deleteNode(root.getRight(), minValue));
+                System.out.println("deleting "+data);
+            }
+        }
+
+        return root;
+    }
+
 
     public static void main(String[] args)
     {
@@ -66,6 +105,7 @@ class Tree
         tree.insert(15);
         tree.insert(25);
 
+        Node rootNodeRes = deleteNode(tree, 40);
 
         //print preorder traversal of binary tree
         Tree.preorder(Tree.root);

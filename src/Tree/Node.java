@@ -7,7 +7,7 @@ public class Node {
     Node left = null;
 
     public Node(){
-        data = 0;
+
     }
     public Node(int item) {
         this.data = item;
