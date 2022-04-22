@@ -2,6 +2,7 @@ package Tree;
 
 class Tree
 {
+    /*
     class Node
     {
         int value;
@@ -96,7 +97,7 @@ class Tree
     public static void main(String[] args)
     {
         Tree tree=new Tree();
-        /*inserting node one by one in Binary Search Tree.Tree */
+        // inserting node one by one in Binary Search Tree.Tree
         tree.insert(30);
         tree.insert(50);
         tree.insert(45);
@@ -105,10 +106,12 @@ class Tree
         tree.insert(15);
         tree.insert(25);
 
-        Node rootNodeRes = deleteNode(tree, 40);
+        //Node rootNodeRes = deleteNode(tree, 40);
 
         //print preorder traversal of binary tree
-        Tree.preorder(Tree.root);
+        //Tree.preorder(Tree.root);
         //Tree.postorder(Tree.root);
     }
+
+     */
 }
