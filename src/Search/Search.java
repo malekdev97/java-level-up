@@ -4,8 +4,11 @@ public class Search {
 
     // attribute
 
-    // Binary Search Tree
-    // code
+    /**
+     *
+     * @param item
+     * @return value
+     */
     public static int search(int item)
     {
         int[] arr = {10, 20, 30, 40, 50, 60, 70, 80};
@@ -14,7 +17,7 @@ public class Search {
         {
             middle = low + high / 2;
             if (item == arr[middle]) {
-                return middle;
+                return item;
             }
             else if (item < arr[middle]) {
                 high = middle - 1;
