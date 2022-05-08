@@ -1,3 +1,7 @@
+package List;
+
+import List.Node;
+
 public class Stack {
 
     /**
@@ -28,7 +32,7 @@ public class Stack {
     public void pop(){
 
         if(top == null){
-            System.out.println("Empty Stack LinkedList");
+            System.out.println("Empty List.Stack List.LinkedList");
             return;
         }
         else {
@@ -39,7 +43,7 @@ public class Stack {
     public int peek(){
 
         if(top == null){
-            System.out.println("Empty Stack LinkedList");
+            System.out.println("Empty List.Stack List.LinkedList");
             return 0;
         }
         else {

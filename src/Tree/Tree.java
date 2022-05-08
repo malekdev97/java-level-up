@@ -3,24 +3,24 @@ package Tree;
 class Tree
 {
     /*
-    class Node
+    class List.Node
     {
         int value;
-        Node left,right;
-        Node(int value)
+        List.Node left,right;
+        List.Node(int value)
         {
             this.value=value;
             left=right=null;
         }
     }
-    static Node root; //root of the tree
+    static List.Node root; //root of the tree
     //Constructor to intialize root with null
     Tree()
     {
         root=null;
     }
     //preorder Traversal of binary tree
-    public static void preorder(Node node)
+    public static void preorder(List.Node node)
     {
         if(node==null)
             return ;
@@ -29,7 +29,7 @@ class Tree
         preorder(node.right);
     }
 
-    public static void postorder(Node node)
+    public static void postorder(List.Node node)
     {
         if(node != null) {
             postorder(node.left);
@@ -39,13 +39,13 @@ class Tree
     }
     public void insert(int item)
     {
-        root =insertNode(root,item); //calling insert Node() method
+        root =insertNode(root,item); //calling insert List.Node() method
     }
-    public Node insertNode(Node root, int item)
+    public List.Node insertNode(List.Node root, int item)
     {
-        if(root==null)     //if root is null create a new Node
+        if(root==null)     //if root is null create a new List.Node
         {
-            root=new Node(item);
+            root=new List.Node(item);
             return root;
         }
         if(item<root.value)  //if item is less than the current value then traverse left subtree
@@ -59,7 +59,7 @@ class Tree
         deleteNode(this.root, data);
     }
 
-    private Node deleteNode(Node root, Integer data) {
+    private List.Node deleteNode(List.Node root, Integer data) {
 
         if(root == null) return root;
 
@@ -106,7 +106,7 @@ class Tree
         tree.insert(15);
         tree.insert(25);
 
-        //Node rootNodeRes = deleteNode(tree, 40);
+        //List.Node rootNodeRes = deleteNode(tree, 40);
 
         //print preorder traversal of binary tree
         //Tree.preorder(Tree.root);

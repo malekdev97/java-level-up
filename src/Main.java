@@ -6,7 +6,7 @@ public class Main {
 
   public static void main(String[] args) throws IOException {
 
-    
+
     /*
     // will print the extracted emails
     PrintWriter output = new PrintWriter("output.txt");

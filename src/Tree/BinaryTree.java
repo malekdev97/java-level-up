@@ -32,10 +32,12 @@ public class BinaryTree {
             parent.right = node;
     }
 
+    // Add node by using Recursion
     public void insert(int item)
     {
-        root =insertNode(root,item);
+        root = insertNode(root,item);
     }
+    // Add helper
     public Node insertNode(Node root, int item)
     {
         if(root==null)
@@ -50,6 +52,7 @@ public class BinaryTree {
         return root;
     }
 
+    // output PostOrder left, right, root
     public static void postorder(Node node)
     {
         if(node != null) {
@@ -58,5 +61,10 @@ public class BinaryTree {
             System.out.print(" "+ node.data + ",");
         }
     }
+
+    // output PreOrder root, left, right
+   
+    // output InOrder left, root, right
+
 
 }

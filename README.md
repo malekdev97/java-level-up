@@ -18,7 +18,7 @@ This Project Include following:
 * Sorting
 * Binary Tree
 * Array
-* LinkedList
+* List.LinkedList
 * Stck
 * Queue
 * reverse pointer

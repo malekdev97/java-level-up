@@ -1,3 +1,7 @@
+package List;
+
+import List.Node;
+
 public class LinkedList {
 
     // Attribute
@@ -156,7 +160,7 @@ public class LinkedList {
         Node tempNode;
         Node currentNode;
         if(head == null) {
-            System.out.println("Node == Null");
+            System.out.println("List.Node == Null");
             return;
         }
         else {
