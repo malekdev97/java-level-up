@@ -63,7 +63,15 @@ public class BinaryTree {
     }
 
     // output PreOrder root, left, right
-   
+    public static void preOrder(Node node)
+    {
+        if(node != null) {
+
+            System.out.println(" "+ node.data +",");
+            preOrder(node.left);
+            preOrder(node.right);
+        }
+    }
     // output InOrder left, root, right
 
 
