@@ -1,4 +1,5 @@
 hi my name is abdulmaik
 
 my email is abdulmalik-abdullah@hotmail.com
+blah blah this is a text to test the program notemail@hotmail.com let's see if java can read this
 

@@ -10,7 +10,7 @@ public class EmailExtraction {
      * @param p
      * @throws IOException
      */
-    
+
     public static void extractEmail(BufferedReader br, PrintWriter pw, Pattern p) throws IOException {
         String line = br.readLine();
 
