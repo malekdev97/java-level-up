@@ -2,6 +2,27 @@ package Tree;
 
 class Tree
 {
+    public Node root;
+
+    // Add node by using Recursion
+    public void insert(int item)
+    {
+        root = insertNode(root,item);
+    }
+    // Add helper
+    public Node insertNode(Node root, int item)
+    {
+        if(root==null)
+        {
+            root= new Node(item);
+            return root;
+        }
+        if(item<root.data)
+            root.left= insertNode(root.left,item);
+        else if(item>root.data)
+            root.right=insertNode(root.right,item);
+        return root;
+    }
     /*
     class List.Node
     {

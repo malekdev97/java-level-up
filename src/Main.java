@@ -1,28 +1,25 @@
-import java.io.*;
-import java.util.regex.Pattern;
+import Search.Search;
+
+import static Search.Search.*;
+
+class Main {
 
 
-public class Main {
+  public static void main(String args[]) {
 
-  public static void main(String[] args) throws IOException {
+    int [] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
+    int target = 10;
+    int result;
 
-    /*
-    // will print the extracted emails
-    PrintWriter output = new PrintWriter("output.txt");
+    //result = binarySearch(array, target);
+    //System.out.println(result);
 
-    // I don't know what the hell is this validation
-    // ,I only know that it will extract the emails
-    Pattern filter = Pattern.compile("[a-zA-Z0-9]"
-            + "[a-zA-Z0-9_.]"
-            + "*@[a-zA-Z0-9]"
-            + "+([.][a-zA-Z]+)+");
-    // the txt file which we will read and extract the email from
-    BufferedReader read = new BufferedReader( new FileReader("input.txt"));
+    result = InterSearch(array, target);
+    System.out.println(result);
 
-    EmailExtraction.extractEmail(read, output, filter);
-    */
+    //result = normalSearch(array, target);
+    //System.out.println(result);
 
   }
-
 }

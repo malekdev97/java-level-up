@@ -73,6 +73,14 @@ public class BinaryTree {
         }
     }
     // output InOrder left, root, right
-
+    public static void inOrder(Node node)
+    {
+        if(node != null)
+        {
+            inOrder(node.left);
+            System.out.println(" "+ node.data +" ");
+            inOrder(node.left);
+        }
+    }
 
 }
