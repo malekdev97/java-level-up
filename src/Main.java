@@ -1,25 +1,51 @@
-import Search.Search;
 
-import static Search.Search.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-class Main {
+public class Main {
+
+  public static void main(String[] args)
+          throws IOException
+  {
+
+    List<String> listOfStrings
+            = new ArrayList<String>();
 
 
-  public static void main(String args[]) {
+    BufferedReader bf = new BufferedReader(
+            new FileReader("file.txt"));
 
-    int [] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    int target = 10;
-    int result;
+    String line = bf.readLine();
 
-    //result = binarySearch(array, target);
-    //System.out.println(result);
 
-    result = InterSearch(array, target);
-    System.out.println(result);
+    while (line != null) {
+      listOfStrings.add(line);
+      line = bf.readLine();
+    }
 
-    //result = normalSearch(array, target);
-    //System.out.println(result);
 
+    bf.close();
+
+
+    String[] array = listOfStrings.toArray(new String[0]);
+
+    boolean searchResult = false;
+
+
+    for (int i = 0; i < array.length; i++) {
+      if(array[i].equals("alomayriy970@outlook.com")) {
+        searchResult = true;
+        System.out.println("Email:"+array[i]+"\n have been found!");
+      }
+    }
+    if(!searchResult) {
+      System.out.println("not found");
+    }
   }
+
+
 }
