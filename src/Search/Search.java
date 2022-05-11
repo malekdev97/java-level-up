@@ -2,13 +2,10 @@ package Search;
 
 public class Search {
 
-    // attribute
 
     /**
-     * @desc search for the item in the array
-     * @bigO Log N
-     * @param item
-     * @return value
+     * Binary Search
+     * Big O = Log N
      */
     public static int binarySearch(int[] arr ,int item)
     {
@@ -29,6 +26,10 @@ public class Search {
         return -1;
     }
 
+    /**
+     * interpolation search
+     * BIG O = Log N
+     */
     public static int InterSearch(int[] array, int target)
     {
         int low = 0, middle = 0, count = 0, high = array.length -1;
@@ -51,10 +52,13 @@ public class Search {
             }
 
         }
-
         return -1;
     }
 
+    /**
+     * Normal search
+     * Big O = N
+     */
     public static int normalSearch(int [] item, int target)
     {
         for(int i = 0; i < item.length; i++) {
@@ -65,7 +69,14 @@ public class Search {
         return -1;
     }
 
-    // Interpolation Search
-    // code
+    public static void main(String[] args) {
 
+        int[] arr = { 2, 4, 0, 1, 9 ,5, 3};
+
+        for(int i = 0; i < arr.length; i++) {
+
+            System.out.println(arr[i]);
+            }
+
+    }
 }

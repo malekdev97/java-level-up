@@ -36,12 +36,10 @@ public class Sort {
                     min_idx = i;
                 }
             }
-
             // put min at the correct position
             int temp = array[step];
             array[step] = array[min_idx];
             array[min_idx] = temp;
         }
-
     }
 }

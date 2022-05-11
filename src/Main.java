@@ -4,47 +4,27 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import Tree.BinaryTree;
+import Tree.BinaryTree;
+
+import static Tree.BinaryTree.inOrder;
 
 public class Main {
 
   public static void main(String[] args)
-          throws IOException
-  {
+          throws IOException {
 
-    List<String> listOfStrings
-            = new ArrayList<String>();
+    BinaryTree tree=new BinaryTree();
+    // inserting node one by one in Binary Search Tree.Tree
+    tree.insert(30);
+    tree.insert(50);
+    tree.insert(45);
+    tree.insert(55);
+    tree.insert(20);
+    tree.insert(15);
+    tree.insert(25);
 
-
-    BufferedReader bf = new BufferedReader(
-            new FileReader("file.txt"));
-
-
-    String line = bf.readLine();
-
-
-    while (line != null) {
-      listOfStrings.add(line);
-      line = bf.readLine();
-    }
-
-
-    bf.close();
-
-
-    String[] array = listOfStrings.toArray(new String[0]);
-
-    boolean searchResult = false;
-
-
-    for (int i = 0; i < array.length; i++) {
-      if(array[i].equals("alomayriy970@outlook.com")) {
-        searchResult = true;
-        System.out.println("Email:"+array[i]+"\n have been found!");
-      }
-    }
-    if(!searchResult) {
-      System.out.println("not found");
-    }
+     inOrder(tree.root);
   }
 
 

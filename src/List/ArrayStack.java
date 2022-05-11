@@ -13,10 +13,7 @@ public class ArrayStack {
     }
 
     public void isFull(){
-        
     }
     public void push(int n){
-
-
     }
 }
