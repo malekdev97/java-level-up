@@ -50,7 +50,6 @@ public class Search {
             else if(target < array[middle]) {
                 high = middle -1;
             }
-
         }
         return -1;
     }
@@ -71,12 +70,15 @@ public class Search {
 
     public static void main(String[] args) {
 
-        int[] arr = { 2, 4, 0, 1, 9 ,5, 3};
+        int[] arr = { 2, 4, 0, 1, 9 ,5};
 
-        for(int i = 0; i < arr.length; i++) {
+        // Binary Search | Log N
+      //  System.out.println(binarySearch(arr, 3));
 
-            System.out.println(arr[i]);
-            }
+        // Interpolation Search | Log N
+        System.out.println(InterSearch(arr, 2));
 
+        //  Search | N
+        System.out.println(normalSearch(arr, 0));
     }
 }
