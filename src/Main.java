@@ -1,21 +1,24 @@
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+ import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 import java.util.List;
 import Tree.BinaryTree;
 import Tree.BinaryTree;
 import List.Queue;
 import List.Node;
+import sorting.*;
 
 import static Tree.BinaryTree.inOrder;
+import static sorting.Sort.bubbleSort;
 
 public class Main {
 
   public static void main(String[] args)
           throws IOException {
-
+  /**
     Queue queue = new Queue();
 
     queue.enqueue(1);
@@ -25,6 +28,11 @@ public class Main {
     queue.enqueue(5);
 
     queue.display();
+ */
+
+  int [] array = {3, 1 ,2 ,9, 5};
+      bubbleSort(array);
+    System.out.println(Arrays.toString(array));
   }
 
 }
