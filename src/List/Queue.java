@@ -1,5 +1,8 @@
 package List;
 
+/**
+ * First in First Out
+ */
 public class Queue {
 
     public int size = 5;
@@ -30,6 +33,10 @@ public class Queue {
 
     }
 
+    /**
+     * Add Node
+     * @param item
+     */
     public void enqueue(int item) {
         if(isFull()) {
             System.out.println("Queue is full");
@@ -46,6 +53,10 @@ public class Queue {
         }
     }
 
+    /**
+     * Delete Node
+     * @return
+     */
     public int dequeue() {
         int item ;
         if(isEmpty()) {
