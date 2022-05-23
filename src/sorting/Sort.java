@@ -55,7 +55,7 @@ public class Sort {
     /**
      * merge Sorting
      */
-    public static void mergeSort(int arr[],int lowerIndex, int higherIndex) {
+    public static void divideArray(int arr[],int lowerIndex, int higherIndex) {
 
         if(lowerIndex < higherIndex) {
 
@@ -64,8 +64,8 @@ public class Sort {
 
             // Sorting recursion sort and second half
 
-            mergeSort(arr, lowerIndex, middle);
-            mergeSort(arr, lowerIndex, higherIndex);
+            divideArray(arr, lowerIndex, middle);
+            divideArray(arr, lowerIndex + 1, higherIndex);
 
             merging(arr, lowerIndex, middle, higherIndex);
 
@@ -114,5 +114,19 @@ public class Sort {
             }
             merge++;
         }
+
+        while(i < lowerNumber) {
+            arr[merge] = leftArray[i];
+            i++;
+            merge++;
+        }
+
+        while(j < higherNumber) {
+            arr[merge] = rightArray[j];
+            j++;
+            merge++;
+        }
+
+
     }
 }

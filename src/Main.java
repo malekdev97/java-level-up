@@ -13,6 +13,7 @@ import sorting.*;
 
 import static Tree.BinaryTree.inOrder;
 import static sorting.Sort.bubbleSort;
+import static sorting.Sort.divideArray;
 
 public class Main {
 
@@ -30,8 +31,11 @@ public class Main {
     queue.display();
  */
 
-  int [] array = {3, 1 ,2 ,9, 5};
-      bubbleSort(array);
+  int [] array = {6, 1 ,8 ,9, 5};
+
+    //  call by refrence
+      //bubbleSort(array);
+      divideArray(array, 0 , array.length-1);
     System.out.println(Arrays.toString(array));
   }
 
