@@ -2,6 +2,26 @@ package sorting;
 
 public class Sort {
 
+    // Quick Sort
+
+    // Insertion Sort
+    public static void inertionSort(int [] array) {
+        int key = 0;
+        int pointer = 0;
+
+        for(int i = 1; i < array.length; i++) {
+
+            key = array[i];
+            pointer = i -1;
+
+            while(pointer >= 0 && key < array[pointer]) {
+
+                array[pointer + 1] = array[pointer];
+                pointer--;
+            }
+            array[pointer + 1] = key;
+        }
+    }
     /**
      * Bubble Sorting
      * @param array

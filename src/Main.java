@@ -14,6 +14,7 @@ import sorting.*;
 import static Tree.BinaryTree.inOrder;
 import static sorting.Sort.bubbleSort;
 import static sorting.Sort.divideArray;
+import static sorting.Sort.inertionSort;
 
 public class Main {
 
@@ -35,7 +36,8 @@ public class Main {
 
     //  call by refrence
       //bubbleSort(array);
-      divideArray(array, 0 , array.length-1);
+      // divideArray(array, 0 , array.length-1);
+      inertionSort(array);
     System.out.println(Arrays.toString(array));
   }
 
