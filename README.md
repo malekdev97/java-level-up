@@ -12,10 +12,15 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This Project Include following:
+Here you can find all most of Data Structure Examples:
 * BST
 * Interpolation Search 
 * Sorting
+* Merge
+* Quick
+* Inerstion
+* Selection
+* Bubbule 
 * Binary Tree
 * Array
 * List.LinkedList
@@ -24,4 +29,5 @@ This Project Include following:
 * reverse pointer
 
 ### Reference:
-* https://www.programiz.com/
+* https://www.programiz.com
+* geeksforgeeks.org
