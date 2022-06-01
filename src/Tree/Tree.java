@@ -1,15 +1,19 @@
 package Tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Tree
 {
     public class Node {
+
 
         int data;
         Node right = null;
         Node left = null;
 
         public Node(){
-
+            this.data = data;
         }
         public Node(int item) {
             this.data = item;
@@ -68,6 +72,99 @@ class Tree
         }
     }
 
+    // delete node from tree
+    static void deleteDeepest(Node root,
+                              Node delNode)
+    {
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(root);
+
+        Node temp = null;
+
+        // Do level order traversal until last node
+        while (!q.isEmpty())
+        {
+            temp = q.peek();
+            q.remove();
+
+            if (temp == delNode)
+            {
+                temp = null;
+                return;
+
+            }
+            if (temp.right!=null)
+            {
+                if (temp.right == delNode)
+                {
+                    temp.right = null;
+                    return;
+                }
+                else
+                    q.add(temp.right);
+            }
+
+            if (temp.left != null)
+            {
+                if (temp.left == delNode)
+                {
+                    temp.left = null;
+                    return;
+                }
+                else
+                    q.add(temp.left);
+            }
+        }
+    }
+
+    // Function to delete given element
+// in binary tree
+    static void delete(Node root, int data)
+    {
+        if (root == null)
+            return;
+
+        if (root.left == null &&
+                root.right == null)
+        {
+            if (root.data == data)
+            {
+                root=null;
+                return;
+            }
+            else
+                return;
+        }
+
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(root);
+        Node temp = null, dataNode = null;
+
+        // Do level order traversal until
+        // we find data and last node.
+        while (!q.isEmpty())
+        {
+            temp = q.peek();
+            q.remove();
+
+            if (temp.data == data)
+                dataNode = temp;
+
+            if (temp.left != null)
+                q.add(temp.left);
+
+            if (temp.right != null)
+                q.add(temp.right);
+        }
+
+        if (dataNode != null)
+        {
+            int x = temp.data;
+            deleteDeepest(root, temp);
+            dataNode.data = x;
+        }
+    }
+
     public static void main(String[] args)
     {
         // inserting node one by one in Binary Search Tree.Tree
@@ -80,6 +177,8 @@ class Tree
         tree.insert(20);
         tree.insert(15);
         tree.insert(25);
+
+        tree.delete(tree.root, 25);
 
         System.out.println("\nPrint PreOrder \n Root, Left, Right");
         preOrder(tree.root);
