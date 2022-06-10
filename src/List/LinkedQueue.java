@@ -1,2 +1,5 @@
-package List;public class LinkedQueue {
+package List;
+
+public class LinkedQueue {
+    // working on it
 }
