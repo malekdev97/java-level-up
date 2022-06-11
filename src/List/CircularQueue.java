@@ -8,7 +8,7 @@ public class CircularQueue {
 
     int [] queue;
 
-    CircularQueue(int size) {
+    public CircularQueue(int size) {
         this.size = size;
         queue = new int[size];
         rear = -1;
@@ -25,7 +25,7 @@ public class CircularQueue {
         return false;
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         if (front == -1)
             return true;
         else
@@ -33,7 +33,7 @@ public class CircularQueue {
     }
 
     // Adding an element
-    void enQueue(int element) {
+    public void enQueue(int element) {
         if (isFull()) {
             System.out.println("Queue is full");
         } else {
@@ -46,7 +46,7 @@ public class CircularQueue {
     }
 
     // Removing an element
-    int deQueue() {
+    public int deQueue() {
         int element;
         if (isEmpty()) {
             System.out.println("Queue is empty");
@@ -64,7 +64,7 @@ public class CircularQueue {
         }
     }
 
-    void display() {
+    public void display() {
         /* Function to display status of Circular Queue */
         int i;
         if (isEmpty()) {
@@ -77,5 +77,15 @@ public class CircularQueue {
             System.out.println(queue[i]);
             System.out.println("Rear -> " + rear);
         }
+    }
+
+    public void countQueue() {
+        int count = 0;
+
+        for(int i = front; i != rear; i = (i + 1) % size) {
+            count++;
+        }
+
+        count = count > 0 ? count++ : count;
     }
 }
