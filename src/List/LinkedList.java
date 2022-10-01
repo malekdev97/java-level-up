@@ -209,7 +209,7 @@ public class LinkedList {
                 System.out.print(", ");
             }
         }
-        System.out.print("]\n");
+        System.out.print("]\n"+nodeList+"\n");
     }
 
     /**

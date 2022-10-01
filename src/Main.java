@@ -21,7 +21,16 @@ public class Main {
 
   public static void main(String[] args)
           throws IOException {
-    /**
+
+      CircularQueue myList = new CircularQueue(5);
+
+      myList.enQueue(10);
+      myList.enQueue(20);
+      myList.deQueue();
+      myList.enQueue(30);
+
+      myList.display();
+    /*
       int input = 0;
       int sum = 0;
       int count = 0;
@@ -39,8 +48,8 @@ public class Main {
           sum = sum + input;
       }
       System.out.println("\nTotal question :"+count +"\nCorrect answers: "+sum+"\nWrong answers :"+(count - sum));
+    */
 
-*/
       /**
         Queue queue = new Queue();
 
