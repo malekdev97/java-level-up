@@ -1,7 +1,7 @@
 
 import java.io.BufferedReader;
 import java.io.FileReader;
- import java.util.ArrayList;
+import java.util.ArrayList;
 import java.io.*;
 import java.util.*;
 import java.util.List;
@@ -16,10 +16,12 @@ import static sorting.Sort.bubbleSort;
 import static sorting.Sort.divideArray;
 import static sorting.Sort.inertionSort;
 import List.CircularQueue;
+import List.LinkedList;
 
 public class Main {
 
   public static void main(String[] args)
+<<<<<<< HEAD
           throws IOException {
 
       CircularQueue myList = new CircularQueue(5);
@@ -31,6 +33,14 @@ public class Main {
 
       myList.display();
     /*
+=======
+  {
+
+
+
+         // throws IOException {
+    /**
+>>>>>>> 50de28c2052e93a0b4e183d524bca56c0968b652
       int input = 0;
       int sum = 0;
       int count = 0;
