@@ -21,7 +21,6 @@ import List.LinkedList;
 public class Main {
 
   public static void main(String[] args)
-<<<<<<< HEAD
           throws IOException {
 
       CircularQueue myList = new CircularQueue(5);

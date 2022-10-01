@@ -6,6 +6,10 @@ class CircularQueueTest {
 
     @Test
     void isFull() {
+        CircularQueue myList = new CircularQueue(1);
+
+        myList.enQueue(10);
+        assertTrue(myList.isFull());
     }
 
     @Test
