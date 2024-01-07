@@ -30,7 +30,7 @@ public class GenericJava {
 
         // Generic Class
         MyGenericClass<Integer, Character> objNum = new MyGenericClass<>(100, '#');
-        MyGenericClass<String, Double> objString = new MyGenericClass<>("Kakashi", 2.5);
+        MyGenericClass<Double, Double> objString = new MyGenericClass<>(2.1, 2.5);
 
         ArrayList<String> arrString = new ArrayList<>();
 

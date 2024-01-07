@@ -63,18 +63,13 @@ public class Queue {
             System.out.println("Queue is Empty");
             return -1;
         }
-        else {
+
+            front++;
+
             item = items[front];
-            if(front >= rear) {
-                front = -1;
-                rear = -1;
-            }
-            else {
-                front++;
-            }
             System.out.println("Dequeue: "+ item);
             return(item);
-        }
+
     }
 
     public void display() {

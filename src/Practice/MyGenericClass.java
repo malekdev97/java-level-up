@@ -1,6 +1,7 @@
 package Practice;
 
-public class MyGenericClass <T, V> {
+// generic bonded type parameter
+public class MyGenericClass <T extends Number, V> {
 
     T x;
     V something;
