@@ -1,32 +1,35 @@
 <div align="center">
-  <h1>Algorithm & Data Structure</h1>
+  <h1>Data Structure & Algorithm </h1>
 <hr>
 <br />
 
-  
-
-
 </div>
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here you can find all most of Data Structure Examples:
+Here you can find implementation of some of the most common data structures, and algorithms with their Big O.
+
+### Data Structure:
+* Array
+* Linked List
+* Stack
+* Queue
+* Tree
+* Graph 
+* Hash Table
+
+### Algorithm:
 * BST
 * Interpolation Search 
-* Sorting
 * Merge
 * Quick
-* Inerstion
+* Bubble
 * Selection
-* Bubbule 
+* Insertion
 * Binary Tree
-* Array
-* List.LinkedList
-* Stck
-* Queue
-* reverse pointer
+* Reverse Pointer
+* Recursion
 
 ### Reference:
 * https://www.programiz.com
