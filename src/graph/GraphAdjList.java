@@ -1,69 +1,60 @@
-package graph;// Adjascency List representation in Java
+package graph;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
-class GraphAdjList {
+public class GraphAdjList {
 
-    static ArrayList<LinkedList<Vertex>> adjList;
+    // store the vertices
+    public ArrayList<LinkedList<Vertex>> vertices; // array list of linked list
 
-    public GraphAdjList() {
-        adjList = new ArrayList<>();
+    public GraphAdjList() 
+    {
+        vertices = new ArrayList<>();
+    }
+    
+
+    public void addVertex(Vertex newVertex) 
+    {
+        LinkedList<Vertex> newList = new LinkedList<>();
+        newList.add(newVertex);
+        vertices.add(newList);
     }
 
-    public void addVertex(int data) {
-        Vertex vertex = new Vertex(data);
-        LinkedList<Vertex> list = new LinkedList<>();
-        list.add(vertex);
-        adjList.add(list);
+    public void addEdge(int src, int dst)
+    {
+        LinkedList srcList = vertices.get(src);
+        Vertex dstVertex = vertices.get(dst).get(0);
+
+        srcList.add(dstVertex);
     }
 
-    public void addEdge(int src, int dest) {
-        Vertex vertex = new Vertex(dest);
-        LinkedList<Vertex> list = adjList.get(src);
-        list.add(vertex);
-    }
-
-    public void removeEdge(int src, int dest) {
-        LinkedList<Vertex> list = adjList.get(src);
-        for(int i = 0; i < list.size(); i++) {
-            if(list.get(i).data == dest) {
-                list.remove(i);
+    public void display()
+    {
+        for(LinkedList<Vertex> list : vertices)
+        {
+            for(Vertex vertex : list)
+            {
+                System.out.print(vertex.data + " -> ");
             }
+
+            System.out.println();
         }
     }
 
-    public boolean isEdge(int src, int dest) {
-        LinkedList<Vertex> list = adjList.get(src);
-        for(int i = 0; i < list.size(); i++) {
-            if(list.get(i).data == dest) {
-                return true;
-            }
-        }
-        return false;
-    }
 
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        for(int i = 0; i < adjList.size(); i++) {
-            s.append(i + ": ");
-            for(int j = 0; j < adjList.get(i).size(); j++) {
-                s.append(adjList.get(i).get(j).data + " ");
-            }
-            s.append("\n");
-        }
-        return s.toString();
-    }
+        public static void main(String[] args) {
 
-    public static void main(String[] args) {
-        GraphAdjList g = new GraphAdjList();
-        g.addVertex(0);
-        g.addVertex(1);
-        g.addVertex(2);
-        g.addVertex(3);
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(2, 3);
-        System.out.print(g.toString());
-    }
+            GraphAdjList graph = new GraphAdjList();
+
+            graph.addVertex(new Vertex('A'));
+            graph.addVertex(new Vertex('B'));
+            graph.addVertex(new Vertex('C'));
+            graph.addEdge(0, 1);
+            graph.addEdge(1, 2);
+            graph.addEdge(2, 0);
+
+            graph.display();
+        }
 
 }

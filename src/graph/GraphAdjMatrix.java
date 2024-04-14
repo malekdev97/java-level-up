@@ -1,46 +1,62 @@
 package graph;
 
+import java.util.ArrayList;
+
 public class GraphAdjMatrix {
 
-    private int[][] adjMatrix;
-    private int numVertices;
+    // to store the vertices of the graph
+    public ArrayList<Vertex> vertices;
 
-    public GraphAdjMatrix(int numVertices) {
-        this.numVertices = numVertices;
-        adjMatrix = new int[numVertices][numVertices];
+    // to store vertices relations using adjacency matrix
+    public int[][] adjMatrix; // 2D array
+
+    public GraphAdjMatrix() {
+        vertices = new ArrayList<>();
+
+        adjMatrix = new int[3][3];
     }
 
-    public void addEdge(int i, int j) {
-        adjMatrix[i][j] = 1;
-        adjMatrix[j][i] = 1;
+    public void addVertex(char data) {
+        vertices.add(new Vertex(data));
     }
 
-    public void removeEdge(int i, int j) {
-        adjMatrix[i][j] = 0;
-        adjMatrix[j][i] = 0;
+    public void addEdge(int src, int dest)
+    {
+        adjMatrix[src][dest] = 1; 
+        // adjMatrix[dest][src] = 1; // undirected graph
     }
+    
+    public void display() {
 
-    public boolean isEdge(int i, int j) {
-        return adjMatrix[i][j] == 1;
-    }
-
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        for(int i = 0; i < numVertices; i++) {
-            s.append(i + ": ");
-            for(int j : adjMatrix[i]) {
-                s.append(j + " ");
-            }
-            s.append("\n");
+        System.out.print("\t");
+        for (int i = 0; i < vertices.size(); i++) {
+            System.out.print(vertices.get(i).data + " "); // print vertices destination
         }
-        return s.toString();
+        System.out.println();
+
+        for (int i = 0; i < vertices.size(); i++) {
+            System.out.print(vertices.get(i).data + "\t"); // print vertices source
+            for (int j = 0; j < vertices.size(); j++) {
+                System.out.print(adjMatrix[i][j] + " "); // print two-dimensional array
+            }
+            System.out.println();
+        }
     }
 
     public static void main(String[] args) {
-        GraphAdjMatrix g = new GraphAdjMatrix(4);
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(2, 3);
-        System.out.print(g.toString());
+        
+        GraphAdjMatrix graph = new GraphAdjMatrix();
+        
+        graph.addVertex('A'); // 0
+        graph.addVertex('B'); // 1
+        graph.addVertex('C'); // 2
+
+        
+        graph.addEdge(0, 1); // A -> B
+        graph.addEdge(1, 2); // B -> C
+        graph.addEdge(2, 0); // C -> A
+
+        
+        graph.display();
     }
 }
