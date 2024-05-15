@@ -1,6 +1,6 @@
 package queue.priorityqueue;
 
-public class PriorityQueue<T extends Comparable<T>> {
+public class PriorityQueue <T extends Comparable<T>> {
     private class Node {
         T data;
         Node next;
