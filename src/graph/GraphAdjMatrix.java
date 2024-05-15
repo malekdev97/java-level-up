@@ -1,62 +1,56 @@
 package graph;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+ 
+class GraphMatrix {
+    private int numVertices;
+    private int[][] adjacencyMatrix;
 
-public class GraphAdjMatrix {
-
-    // to store the vertices of the graph
-    public ArrayList<Vertex> vertices;
-
-    // to store vertices relations using adjacency matrix
-    public int[][] adjMatrix; // 2D array
-
-    public GraphAdjMatrix() {
-        vertices = new ArrayList<>();
-
-        adjMatrix = new int[3][3];
+    public GraphMatrix(int numVertices) {
+        this.numVertices = numVertices;
+        adjacencyMatrix = new int[numVertices][numVertices];
     }
 
-    public void addVertex(char data) {
-        vertices.add(new Vertex(data));
+    public void addEdge(int v1, int v2, int weight) {
+        adjacencyMatrix[v1][v2] = weight;
+        adjacencyMatrix[v2][v1] = weight;
     }
 
-    public void addEdge(int src, int dest)
-    {
-        adjMatrix[src][dest] = 1; 
-        // adjMatrix[dest][src] = 1; // undirected graph
-    }
-    
-    public void display() {
+    public void BFS(int startVertex) {
+        boolean[] visited = new boolean[numVertices];
+        Queue<Integer> queue = new LinkedList<>();
 
-        System.out.print("\t");
-        for (int i = 0; i < vertices.size(); i++) {
-            System.out.print(vertices.get(i).data + " "); // print vertices destination
-        }
-        System.out.println();
+        visited[startVertex] = true;
+        queue.offer(startVertex);
 
-        for (int i = 0; i < vertices.size(); i++) {
-            System.out.print(vertices.get(i).data + "\t"); // print vertices source
-            for (int j = 0; j < vertices.size(); j++) {
-                System.out.print(adjMatrix[i][j] + " "); // print two-dimensional array
+        while (!queue.isEmpty()) {
+            int currentVertex = queue.poll();
+            System.out.print(currentVertex + " ");
+
+            for (int i = 0; i < numVertices; i++) {
+                if (adjacencyMatrix[currentVertex][i] != 0 && !visited[i]) {
+                    visited[i] = true;
+                    queue.offer(i);
+                }
             }
-            System.out.println();
         }
     }
 
     public static void main(String[] args) {
-        
-        GraphAdjMatrix graph = new GraphAdjMatrix();
-        
-        graph.addVertex('A'); // 0
-        graph.addVertex('B'); // 1
-        graph.addVertex('C'); // 2
+        GraphMatrix graph = new GraphMatrix(6);
 
-        
-        graph.addEdge(0, 1); // A -> B
-        graph.addEdge(1, 2); // B -> C
-        graph.addEdge(2, 0); // C -> A
+        graph.addEdge(0, 1, 4);
+        graph.addEdge(0, 2, 2);
+        graph.addEdge(1, 2, 5);
+        graph.addEdge(1, 3, 10);
+        graph.addEdge(2, 4, 3);
+        graph.addEdge(3, 4, 1);
+        graph.addEdge(3, 5, 6);
+        graph.addEdge(4, 5, 8);
 
-        
-        graph.display();
+        System.out.println("Breadth First Traversal:");
+        graph.BFS(0);
     }
 }
