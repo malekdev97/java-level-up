@@ -1,61 +1,89 @@
 package linkedlist;
 
-public class LinkedList <T>{
+class LinkedList {
+    class Node {
+        int data;
+        Node next;
+        Node prev;
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+            this.prev = null;
+        }
+    }
+    Node head;
+    Node tail;
 
-    Node Head;
-
-    public LinkedList() {
-        Head = null;
+    LinkedList() {
+        this.head = null;
+        this.tail = null;
     }
 
-    // big O(1)
-    public void addFirst(T data) {
+    void addLast(int data) {
+        // 1  
         Node newNode = new Node(data);
-
-        if(Head == null) {
-            Head = newNode;
+        // 2 
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
         } else {
-            newNode.next = Head;
-            Head = newNode;
+            // 2 
+            tail.next = newNode;
+            newNode.prev = tail;
+            // 3
+            tail = newNode;
+            
         }
     }
 
-    // big O(n)
-    public void addLast(T data) {
+    void addFirst(int data) {
+        // 1
         Node newNode = new Node(data);
-
-        if(Head == null) {
-            Head = newNode;
+        // 3
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
         } else {
-            Node temp = Head;
-            while(temp.next != null) {
-                temp = temp.next;
-            }
-
-            temp.next = newNode;
+            // 2
+            newNode.next = head;
+            head.prev = newNode;
+            // 3
+            head = newNode;
         }
     }
 
-    // big O(1)
-    public void deleteFirst() {
-        if(Head == null) {
+     void removeFirst() {
+        if (head == null) {
             System.out.println("List is empty");
         } else {
-            Head = Head.next;
+            head = head.next;
+            head.prev = null;
+        }
+
+    }
+
+    void removeLast() {
+        if (head == null) {
+            System.out.println("List is empty");
+        } else {
+            tail = tail.prev;
+            tail.next = null;
         }
     }
 
-    // big O(n)
-    public void deleteLast() {
-        if(Head == null) {
-            System.out.println("List is empty");
-        } else {
-            Node temp = Head;
-            while(temp.next.next != null) {
-                temp = temp.next;
-            }
 
-            temp.next = null;
+    void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
         }
+    }
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.addLast(10);
+        list.addLast(20);
+        list.addFirst(30);
+        list.display();
     }
 }
