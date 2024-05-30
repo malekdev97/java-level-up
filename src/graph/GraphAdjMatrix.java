@@ -1,46 +1,56 @@
 package graph;
 
-public class GraphAdjMatrix {
-
-    private int[][] adjMatrix;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+ 
+class GraphMatrix {
     private int numVertices;
+    private int[][] adjacencyMatrix;
 
-    public GraphAdjMatrix(int numVertices) {
+    public GraphMatrix(int numVertices) {
         this.numVertices = numVertices;
-        adjMatrix = new int[numVertices][numVertices];
+        adjacencyMatrix = new int[numVertices][numVertices];
     }
 
-    public void addEdge(int i, int j) {
-        adjMatrix[i][j] = 1;
-        adjMatrix[j][i] = 1;
+    public void addEdge(int v1, int v2, int weight) {
+        adjacencyMatrix[v1][v2] = weight;
+        adjacencyMatrix[v2][v1] = weight;
     }
 
-    public void removeEdge(int i, int j) {
-        adjMatrix[i][j] = 0;
-        adjMatrix[j][i] = 0;
-    }
+    public void BFS(int startVertex) {
+        boolean[] visited = new boolean[numVertices];
+        Queue<Integer> queue = new LinkedList<>();
 
-    public boolean isEdge(int i, int j) {
-        return adjMatrix[i][j] == 1;
-    }
+        visited[startVertex] = true;
+        queue.offer(startVertex);
 
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        for(int i = 0; i < numVertices; i++) {
-            s.append(i + ": ");
-            for(int j : adjMatrix[i]) {
-                s.append(j + " ");
+        while (!queue.isEmpty()) {
+            int currentVertex = queue.poll();
+            System.out.print(currentVertex + " ");
+
+            for (int i = 0; i < numVertices; i++) {
+                if (adjacencyMatrix[currentVertex][i] != 0 && !visited[i]) {
+                    visited[i] = true;
+                    queue.offer(i);
+                }
             }
-            s.append("\n");
         }
-        return s.toString();
     }
 
     public static void main(String[] args) {
-        GraphAdjMatrix g = new GraphAdjMatrix(4);
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(2, 3);
-        System.out.print(g.toString());
+        GraphMatrix graph = new GraphMatrix(6);
+
+        graph.addEdge(0, 1, 4);
+        graph.addEdge(0, 2, 2);
+        graph.addEdge(1, 2, 5);
+        graph.addEdge(1, 3, 10);
+        graph.addEdge(2, 4, 3);
+        graph.addEdge(3, 4, 1);
+        graph.addEdge(3, 5, 6);
+        graph.addEdge(4, 5, 8);
+
+        System.out.println("Breadth First Traversal:");
+        graph.BFS(0);
     }
 }

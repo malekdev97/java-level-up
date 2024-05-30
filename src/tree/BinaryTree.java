@@ -9,7 +9,7 @@ public class BinaryTree {
         root = insertNode(root,item);
     }
     // Add helper
-    public Node insertNode(Node root, int item)
+    public static Node insertNode(Node root, int item)
     {
         if(root==null)
         {

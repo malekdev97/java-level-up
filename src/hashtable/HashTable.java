@@ -2,27 +2,56 @@ package hashtable;
 
 import java.util.LinkedList;
 
-public class HashTable {
-    public HashTable(int size, double... loadFactor) {
-        hashTable = new LinkedList[size];
-        this.size = size;
-        if (loadFactor.length != 0) {
-            this.loadFactor = loadFactor[0];
-            // Threshold is load factor multiplied into size casted into an int
-            this.threshold = (int) this.loadFactor * size;
-        } else {
-            // Threshold is load factor multiplied into size casted into an int
-            this.threshold = (int) (DEFAULT_LOADFACTOR * size);
+class HashTable<K, V> {
+    private class Entry {
+        K key;
+        V value;
+
+        public Entry(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private LinkedList<Entry>[] table;
+    private static final int INITIAL_CAPACITY = 16; // for simplicity, choose a power of 2
+
+    public HashTable() {
+        table = new LinkedList[INITIAL_CAPACITY];
+    }
+
+    public void put(K key, V value) {
+        int index = getHash(key);
+        if (table[index] == null) {
+            table[index] = new LinkedList<>();
         }
 
-    }
-    public LinkedList<Entry> bucket;
-    public LinkedList<Entry> hashTable[];
-    public int size, threshold, count = 0;
-    public double loadFactor = 0;
+        // Check if key already exists
+        for (Entry entry : table[index]) {
+            if (entry.key.equals(key)) {
+                entry.value = value; // update the value
+                return;
+            }
+        }
 
-    // load factor is a value using which we resize the hash table after a set number of
-    // elements are inserted, 0.75 chosen here will resize the table after it has reached
-    // 75% of it's capacity
-    final static double DEFAULT_LOADFACTOR = 0.75;
+        // Add new entry
+        table[index].add(new Entry(key, value));
+    }
+
+    public V get(K key) {
+        int index = getHash(key);
+        LinkedList<Entry> entries = table[index];
+        if (entries != null) {
+            for (Entry entry : entries) {
+                if (entry.key.equals(key)) {
+                    return entry.value;
+                }
+            }
+        }
+        return null; // if key not found
+    }
+
+    private int getHash(K key) {
+        return Math.abs(key.hashCode()) % INITIAL_CAPACITY;
+    }
 }

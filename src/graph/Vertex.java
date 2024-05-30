@@ -2,10 +2,10 @@ package graph;
 
 public class Vertex {
 
-        int data;
+        char data;
         boolean visited;
 
-        public Vertex(int data) {
+        public Vertex(char data) {
             this.data = data;
             this.visited = false;
         }

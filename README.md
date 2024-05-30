@@ -34,3 +34,10 @@ Here you can find implementation of some of the most common data structures, and
 ### Reference:
 * https://www.programiz.com
 * geeksforgeeks.org
+
+
+Priority Queue can be done with:
+- linked list
+- array
+- binary search tree 
+- heap data structure 
