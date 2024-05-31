@@ -38,6 +38,22 @@ class GraphMatrix {
         }
     }
 
+    public void DFS(int startVertex) {
+        boolean[] visited = new boolean[numVertices];
+        DFSUtil(startVertex, visited);
+    }
+
+    private void DFSUtil(int currentVertex, boolean[] visited) {
+        visited[currentVertex] = true;
+        System.out.print(currentVertex + " ");
+
+        for (int i = 0; i < numVertices; i++) {
+            if (adjacencyMatrix[currentVertex][i] != 0 && !visited[i]) {
+                DFSUtil(i, visited);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         GraphMatrix graph = new GraphMatrix(6);
 
@@ -52,5 +68,8 @@ class GraphMatrix {
 
         System.out.println("Breadth First Traversal:");
         graph.BFS(0);
+        System.out.println();
+        graph.DFS(0);
+
     }
 }
