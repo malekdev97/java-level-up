@@ -7,6 +7,28 @@ public class Main {
     // Java SE Programmer I 1Z0-808
     //     - Basic 
 	// 	○ Scope variables
+	{
+		int x = 5;
+		{
+			System.out.println(x); // x is in scope
+			// int x = 10; // x is already defined
+			int y = 10;
+		}
+		// System.out.println(y); // y is out of scope
+	}
+	// System.out.println(x); // x is out of scope
+
+	int a = 9;
+	for(a = 0; a < 5; a++) {
+		System.out.println(a);
+	}
+
+	for(int i = 0; i < 5; i++) {
+		System.out.println(i);
+	}
+	int i = 100;
+	System.out.println(i);
+
 	// 	○ Class structure
 	// 	○ Run java via CMD
 	// 	○ Compare component oo, platform independence, etc.
