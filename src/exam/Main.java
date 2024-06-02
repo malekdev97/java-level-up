@@ -1,5 +1,7 @@
 package exam;
 
+import java.util.function.BiFunction;
+
 public class Main {
     
 
@@ -84,7 +86,13 @@ public class Main {
 	// 	○ Manipulate String
 	// 	○ Manipulate calendar data from java.time.LocalDateTime, formatter, period 
 	// 	○ Lambda expression and predicate expression
+		BiFunction<Integer, Integer, Integer> add = (a, b) -> a + b;
+		BiFunction<Float, Long, Boolean> func = (f, i) -> f > i; 
+		boolean res = func.apply(10.0f, 500L);
+		System.out.println(res);
 
+        int result = add.apply(5, 3);
+        System.out.println("The sum is: " + result);
 
 
     }
