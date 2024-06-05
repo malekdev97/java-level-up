@@ -7,44 +7,47 @@ public class Main {
 	public static void main(String[] args) {
 		// Java SE Programmer I 1Z0-808
 		// - Basic
-		// ○ Scope variables
-		{
-			int x = 5;
+			// ○ Scope variables
 			{
-				System.out.println(x); // x is in scope
-				// int x = 10; // x is already defined
-				int y = 10;
+				int x = 5;
+				{
+					System.out.println(x); // x is in scope
+					// int x = 10; // x is already defined
+					int y = 10;
+				}
+				// System.out.println(y); // y is out of scope
 			}
-			// System.out.println(y); // y is out of scope
-		}
-		// System.out.println(x); // x is out of scope
+			// System.out.println(x); // x is out of scope
 
-		int a = 9;
-		for (a = 0; a < 5; a++) {
-			System.out.println(a);
-		}
+			int a = 9;
+			for (a = 0; a < 5; a++) {
+				System.out.println(a);
+			}
 
-		for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 5; i++) {
+				System.out.println(i);
+			}
+			int i = 100;
 			System.out.println(i);
-		}
-		int i = 100;
-		System.out.println(i);
 
-		// ○ Class structure
-		class ClassName {
-			 // attributes 
-			 static int x = 5;
+			// ○ Class structure
+			class ClassName {
+				// attributes 
+				static int x = 5;
 
-			 // methods 
-			 public static void myMethod() {
+				// methods 
+				public static void myMethod() {
 
-				// print "I'm my method"
-				System.out.println("I'm my method");
-			 }
-		}
-		//   ○ Run java via CMD
-		// ○ Compare component oo, platform independence, etc.
-		// ○ Import java packages
+					// print "I'm my method"
+					System.out.println("I'm my method");
+				}
+			}
+			//   ○ Run java via CMD
+				// 1- javac Main.java -> Main.class 2- run Java Main -> output code  
+
+			// ○ Compare and contrast the features and components
+			// of Java such as: platform independence, object orientation, encapsulation, etc.
+			// ○ Import java packages
 
 		// - Working With Java Data Types
 		// ○ All Types + Casting
