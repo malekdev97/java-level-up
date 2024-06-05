@@ -32,9 +32,17 @@ public class Main {
 
 		// ○ Class structure
 		class ClassName {
-			 
+			 // attributes 
+			 static int x = 5;
+
+			 // methods 
+			 public static void myMethod() {
+
+				// print "I'm my method"
+				System.out.println("I'm my method");
+			 }
 		}
-		// ○ Run java via CMD
+		//   ○ Run java via CMD
 		// ○ Compare component oo, platform independence, etc.
 		// ○ Import java packages
 
