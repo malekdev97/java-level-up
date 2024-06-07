@@ -1,7 +1,11 @@
 package exam;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 import java.util.function.BiFunction;
+
+import javax.swing.event.ListSelectionEvent;
 
 public class Main {
 
@@ -67,6 +71,25 @@ public class Main {
 			// Upcasting: child -> parent
 				
 			// ○ Object reference variables vs primitive variables
+			// // ○ Object reference variables vs primitive variables
+				// // call by value = primitive 
+				// public static void  incFloat(float num) {
+				// 	num = num * 100; // this will not change the valu of the num
+					
+				// }
+				// // call by reference variable
+				// public static void addElm(List<String> strArr) {
+				// 	strArr.add("New Str"); // this will add new str to myStr 
+				// 	// bcz it's call by value 
+				// }
+				// we can't access not primitive date directly 
+
+				// Long npl = 1000L;
+				// long pl = 1000L;
+				// boolean res = pl == npl ? true : false;
+				// System.out.println(res);
+
+				// @@ I have stoped here 7/June/2024
 			// ○ Read object field
 			// ○ Object lifecycle (creation, dereference, reassignment and garbage
 			// collection
@@ -114,13 +137,26 @@ public class Main {
 		// ○ Manipulate String
 		// ○ Manipulate calendar data from java.time.LocalDateTime, formatter, period
 		// ○ Lambda expression and predicate expression
-		BiFunction<Integer, Integer, Integer> add = (x, z) -> x + z;
-		BiFunction<Float, Long, Boolean> func = (one, two) -> one > two;
-		boolean res = func.apply(10.0f, 500L);
-		System.out.println(res);
+		// BiFunction<Integer, Integer, Integer> add = (x, z) -> x + z;
+		// BiFunction<Float, Long, Boolean> func = (one, two) -> one > two;
+		// boolean res = func.apply(10.0f, 500L);
+		// System.out.println(res);
 
-		int result = add.apply(5, 3);
-		System.out.println("The sum is: " + result);
+		// int result = add.apply(5, 3);
+		// System.out.println("The sum is: " + result);
+
+
+		// float myFloat = 0.30f;
+		// incFloat(myFloat);
+
+		// List<String> myStr = new LinkedList<String>();
+		// myStr.add("old Str");
+
+		// addElm(myStr);
+		
+		// System.out.println(myStr);
 
 	}
+
+	
 }
