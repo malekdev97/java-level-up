@@ -1,12 +1,14 @@
 <div align="center">
-  <h1>Data Structure & Algorithm </h1>
+  <h1>Java 1Z0-808 study guide</h1>
 <hr>
 <br />
 
 </div>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Get Started 
+
+so the study is basicly in one big java file which has all the topic in the Java 1Z0-808 exam 
 
 Here you can find implementation of some of the most common data structures, and algorithms with their Big O.
 
