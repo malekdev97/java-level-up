@@ -1,5 +1,6 @@
 package exam;
 
+import java.util.Random;
 import java.util.function.BiFunction;
 
 public class Main {
@@ -44,18 +45,32 @@ public class Main {
 			}
 			//   ○ Run java via CMD
 				// 1- javac Main.java -> Main.class 2- run Java Main -> output code  
-
+				
 			// ○ Compare and contrast the features and components
 			// of Java such as: platform independence, object orientation, encapsulation, etc.
 			// ○ Import java packages
+			// import java.util.Random;
+			// public class myclass {
+			// 	public static void main(String[] args) {
+					
+			// 		Random rand = new Random();   
+			// 		System.out.println(rand.nextInt(5));
+			// 	}
+			// }
+
 
 		// - Working With Java Data Types
-		// ○ All Types + Casting
-		// ○ Object reference variables vs primitive variables
-		// ○ Read object field
-		// ○ Object lifecycle (creation, dereference, reassignment and garbage
-		// collection
-		// ○ Wrapper classes Boolean, Double, Integer
+			// ○ All Types + Casting
+			//      <- UpCasting    |    DownCasting ->
+			// Double -> Float -> Long -> int -> short -> byte
+			// Downcasting: parent -> child
+			// Upcasting: child -> parent
+				
+			// ○ Object reference variables vs primitive variables
+			// ○ Read object field
+			// ○ Object lifecycle (creation, dereference, reassignment and garbage
+			// collection
+			// ○ Wrapper classes Boolean, Double, Integer
 
 		// - Using Operators and Decision Constructs
 		// ○ Java operators and parentheses
