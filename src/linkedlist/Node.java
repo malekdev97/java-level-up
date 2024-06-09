@@ -1,12 +1,13 @@
 package linkedlist;
 
-public class Node <T> {
+class Node {
+    int data; // Data to be stored
+    Node next; // Pointer to the next node in the list
 
-    T data;
-    Node next;
-
-    public Node(T data) {
+    public Node(int data) {
         this.data = data;
-        this.next = null;
+        next = null;
     }
+
+    
 }
