@@ -5,18 +5,21 @@ import java.util.ArrayList;
 
     public class GraphList {
 
-        public ArrayList<LinkedList<Vertex>> vertices;
+        
 
-        public GraphList() {
-            vertices = new ArrayList<>();
-        }
 
+        // ArrayList of LinkedList to store the graph relation
+        public ArrayList<LinkedList<Vertex>> vertices = new ArrayList<LinkedList<Vertex>>();
+
+    // create addVertex to add a list into the array 
         public void addVertex(Vertex v) {
-            LinkedList<Vertex> list = new LinkedList<>();
+            
+            LinkedList<Vertex> list = new LinkedList<Vertex>();
             list.add(v);
             vertices.add(list);
         }
-
+ 
+        /// addEdge to link the source vertex to the destination vertex
         public void addEdge(int src, int dst) {
             LinkedList<Vertex> list = vertices.get(src); // get the list of vertices at index src
             Vertex dstVertex = vertices.get(dst).get(0); // get the vertex at index dst
