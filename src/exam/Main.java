@@ -1,9 +1,12 @@
 package exam;
-
 public class Main {
     
 
     public static void main(String [] args) {
+
+	
+
+
     // Java SE Programmer I 1Z0-808
     //     - Basic 
 	// 	○ Scope variables
@@ -30,13 +33,59 @@ public class Main {
 	System.out.println(i);
 
 	// 	○ Class structure
+	/* public class ClassName {
+		// Fields (or instance variable)
+		private String field1;
+		private int field2;
+	
+		// Constructor
+		public ClassName(String field1, int field2) {
+			this.field1 = field1;
+			this.field2 = field2;
+		}
+	
+		// Methods
+		public String getField1() {
+			return this.field1;
+		}
+	
+		public void setField1(String field1) {
+			this.field1 = field1;
+		}
+	
+		// ... more methods
+	} */
 	// 	○ Run java via CMD
-	// 	○ Compare component oo, platform independence, etc.
+	   // Javac ClassName.java -> create ClassName.class
+	   // Java ClassName -> run ClassName.class which is java bytecode  
+	   // This .class file can then be run on any machine that has a JVM, which is what makes Java a platform-independent language.
+	
+	   // 	○ Compare component oo, platform independence, etc.
 	// 	○ Import java packages 
+	// import java.util.regex.*;
+
+		// String email = "a@a.com";
+		// String regex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
+		// Pattern pattern = Pattern.compile(regex);
+		// Matcher matcher = pattern.matcher(email);
+		// System.out.println("result");
+		// System.out.println(matcher.matches());
+		// - Working With Java Data Types
 		
-	// - Working With Java Data Types
+	
+
 	// 	○ All Types + Casting 
+	long l = 1000000000000000000L;
+	int integer = 1;
+	short s = 1;
+	float f = 1.0f;
+	double d = 1.0d;
+	char c = 'a';
+	boolean b = true;
+	byte by = 100;
+
 	// 	○ Object reference variables vs primitive variables
+	
 	// 	○ Read object field
 	// 	○ Object lifecycle (creation, dereference, reassignment and garbage collection
 	// 	○ Wrapper classes Boolean, Double, Integer
@@ -85,7 +134,27 @@ public class Main {
 	// 	○ Manipulate calendar data from java.time.LocalDateTime, formatter, period 
 	// 	○ Lambda expression and predicate expression
 
+	String [] arr = {"a", "b", "c"};
+	objectReference(arr);
+	System.out.println(arr[0]);
+	System.out.println(arr[2]);
 
+	int count = 5;
+	primitive(count);
+
+	System.out.println(count);
 
     }
+
+	// 	○ Object reference variables vs primitive variables
+	public static void objectReference(String[] arr) {
+		
+		arr[0] = "new value";
+	}
+
+	public static int primitive(int a) {
+		a = 10;
+		return a;
+	}
+
 }
