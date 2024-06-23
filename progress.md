@@ -1,3 +1,16 @@
+# Java 1Z0-808
+
+- Basic
+- Working With Java Data Types
+- Using Operators and Decision Constructs
+- Creating and Using Arrays
+- Using Loop Constructs
+- Working with Methods and Encapsulation
+- Working with Inheritance
+- Handling Exceptions
+- Working with Selected classes from the Java API
+
+
 package exam;
 
 import java.io.FileNotFoundException;
@@ -13,34 +26,9 @@ import java.util.function.BiFunction;
 
 import javax.swing.event.ListSelectionEvent;
 
-import exception.ExcpetionHandler;
-
 public class Main {
 
-	public static void checkNum(int num) throws ExcpetionHandler {
-		if(num > 20) {
-			throw new ExcpetionHandler("you're old");
-		} else {
-			System.out.println("you're young");
-		
-		}
-	}
-
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-
-		int num = 25;
-
-		try {
-			checkNum(num);
-		}
-		catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		finally {
-			System.out.println("This is finally block");
-		}
-
-
 		// Java SE Programmer I 1Z0-808
 		// - Basic
 			// ○ Scope variables
@@ -212,21 +200,6 @@ public class Main {
 		String curr = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(now);
 		System.out.println(curr);
 
-		// Exception 
-
-		
-
-	} // Main close 
-
-	public static void login (String username, String password) throws Exception {
-		if (username == null || password == null) {
-			throw new Exception("Username or password can't be null");
-		}
-		if (username.equals("admin") && password.equals("admin")) {
-			System.out.println("Welcome Admin");
-		} else {
-			System.out.println("Invalid username or password");
-		}
 	}
 
 	public static void testException(int i) throws FileNotFoundException, IOException {
