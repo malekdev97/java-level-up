@@ -14,26 +14,7 @@ class BTR {
   public BTR(Node root) {
     this.root = root;
   }
-  // Pre-order traverse
-  public void print() {
-    if (this.root == null) {
-      System.out.println("Tree is empty");
-      return;
-    }
-    Stack<Node> stack = new Stack<Node>();
-    stack.push(this.root);
-    while (!stack.isEmpty()) {
-      Node currentNode = stack.pop();
-      System.out.print(" " + currentNode.data);
-      if (currentNode.right != null) {
-        stack.push(currentNode.right);
-      }
-      if (currentNode.left != null) {
-        stack.push(currentNode.left);
-      }
-    }
-    return;
-  }
+  
   public Node search(int target) {
     if (this.root == null) {
       System.out.println("Tree is empty");
@@ -92,6 +73,27 @@ class BTR {
     System.out.println(node.data);
     printRec(node.left);
     printRec(node.right);
+  }
+
+  // Pre-order traverse
+  public void print() {
+    if (this.root == null) {
+      System.out.println("Tree is empty");
+      return;
+    }
+    Stack<Node> stack = new Stack<Node>();
+    stack.push(this.root);
+    while (!stack.isEmpty()) {
+      Node currentNode = stack.pop();
+      System.out.print(" " + currentNode.data);
+      if (currentNode.right != null) {
+        stack.push(currentNode.right);
+      }
+      if (currentNode.left != null) {
+        stack.push(currentNode.left);
+      }
+    }
+    return;
   }
   public static void main(String[] args) {
     // Root creation
