@@ -1,4 +1,4 @@
-package graphtest;
+package graphmatrix;
 
 public class Vertex {
     public char data;

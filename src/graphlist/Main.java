@@ -1,4 +1,4 @@
-package graphtesttwo;
+package graphlist;
 
 
 public class Main {

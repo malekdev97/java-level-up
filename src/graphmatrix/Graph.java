@@ -1,4 +1,4 @@
-package graphtest;
+package graphmatrix;
 
 import java.util.ArrayList;
 

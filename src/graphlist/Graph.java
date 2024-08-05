@@ -1,9 +1,9 @@
-package graphtesttwo;
+package graphlist;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Graph1 {
+public class Graph {
     ArrayList<LinkedList<Vertex>> vertices = new ArrayList<>();
 
     public void addVertex(Vertex v) {
@@ -30,7 +30,7 @@ public class Graph1 {
     }
 
     public static void main(String[] args) {
-        Graph1 g = new Graph1();
+        Graph g = new Graph();
 
         g.addVertex(new Vertex("A"));
         g.addVertex(new Vertex("B"));
