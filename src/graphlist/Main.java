@@ -12,7 +12,7 @@ public class Main {
         graph.addVertex(new Vertex("Fahad")); // index 0
         graph.addVertex(new Vertex("Majed")); // index 1
 
-        System.out.println(graph.vertices.get(0).get(0).data);
+        // System.out.println(graph.vertices.get(0).get(0).data);
 
         graph.addEdge(0, 1);
         graph.addEdge(1, 0);
