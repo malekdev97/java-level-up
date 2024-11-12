@@ -9,7 +9,9 @@ public class Graph {
 
     public void addVertex(Vertex vertex) {
         LinkedList<Vertex> list = new LinkedList<>();
+
         list.add(vertex);
+        
         vertices.add(list);
     }
 
