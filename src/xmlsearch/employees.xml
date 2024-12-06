@@ -1,0 +1,28 @@
+<?xml version = "1.0" ?>
+<Employee-Detail>
+
+<Employee>
+<Emp_Id> 8 </Emp_Id>
+<Emp_Name> Majed </Emp_Name>
+<Emp_E-mail> majed@gmail.com </Emp_E-mail>
+</Employee>
+
+<Employee>
+<Emp_Id> 4 </Emp_Id>
+<Emp_Name> Waleed </Emp_Name>
+<Emp_E-mail> Waleed@gmail.com </Emp_E-mail>
+</Employee>
+
+<Employee>
+<Emp_Id> 2 </Emp_Id>
+<Emp_Name> Fisal </Emp_Name>
+<Emp_E-mail> fisal@gmail.com </Emp_E-mail>
+</Employee>
+
+<Employee>
+<Emp_Id> 1 </Emp_Id>
+<Emp_Name> Ahmed </Emp_Name>
+<Emp_E-mail> ahmed@gmail.com </Emp_E-mail>
+</Employee>
+
+</Employee-Detail>

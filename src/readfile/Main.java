@@ -24,6 +24,7 @@ public class Main {
 
         FileOutputStream fos = new FileOutputStream(fileName, true);
         fos.write(fileContent.getBytes()); 
+        fos.write("\nNew line new beggining!".getBytes());
         fos.close();
     }
 
