@@ -1,1 +1,1 @@
-Java is the best language
+int a = 10 ;
