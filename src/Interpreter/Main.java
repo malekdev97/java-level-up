@@ -1,15 +1,13 @@
 package Interpreter;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+
 
 public class Main {
-    
+
     public static void main(String[] args) throws IOException {
 
 
@@ -19,10 +17,18 @@ public class Main {
         
         String yaml = Files.readString(path);
 
+        ArrayList<String> tokens = new ArrayList<String>();
+
         // create a new instance of the tokenizer
         for(String line : yaml.split("\n")){
-            System.out.println(line);
+            for(String letter : line.split("")){
+                
+                tokens.add(letter);
+  
+            }
         }
+
+        System.out.println(tokens);
     }
        
 }
