@@ -1,5 +1,6 @@
 package distribution;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -13,6 +14,11 @@ public class Mian {
         // distribute(bigData);
         stringDistribute(name);
 
+    }
+
+    public static void distribution(ArrayList<String> arr) {
+
+        ArrayList<ArrayList <String>> tempArr = new ArrayList<ArrayList <String>>();
     }
 
     // Length of the array
