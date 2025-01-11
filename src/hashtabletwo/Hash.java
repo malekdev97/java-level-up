@@ -1,40 +1,56 @@
 package hashtabletwo;
 
-import java.util.*;
+import java.util.LinkedList;
 
-public class Hash{
-	
-    public static void main(String args[]) {    	
+public class Hash {
+    // Number of buckets
+    private int size;
 
-    	// Hashtable = A data structure that stores unique keys to values ex.<Integer, String>
-    	//			   Each key/value pair is known as an Entry
-    	//			   FAST insertion, look up, deletion of key/value pairs
-    	// 			   Not ideal for small data sets, great with large data sets
-    	
-    	// hashing = Takes a key and computes an integer (formula will vary based on key & data type)
-    	//		       In a Hashtable, we use the hash % capacity to calculate an index number 
-    	
-    	//			key.hashCode() % capacity = index  
-    	
-    	// bucket = an indexed storage location for one or more Entries
-    	//	            can store multiple Entries in case of a collision (linked similarly a LinkedList)
-    	
-    	// collision = hash function generates the same index for more than one key
-    	//			less collisions = more efficiency
-    	
-    	// Runtime complexity: Best Case O(1)
-    	//                                     Worst Case O(n)
+    private  LinkedList<Integer>[] table;
 
-    	Hashtable<Integer, String> table = new Hashtable<>(10);
-    	
-    	table.put(100, "Spongebob");
-    	table.put(123, "Patrick");
-    	table.put(321, "Sandy");
-    	table.put(555, "Squidward");
-    	table.put(777, "Gary");
-    	  	
-    	for(Integer key : table.keySet()) {
-    		System.out.println(key.hashCode() % 10 + "\t" + key + "\t" + table.get(key));
-    	}
+    public Hash(int size) {
+        this.size = size;
+        this.table = new LinkedList[size]; //  each position in the table initially points to an empty LinkedList.
+        for (int i = 0; i < size; i++) {  // iterates over each index in the table array.
+            table[i] = new LinkedList<>(); //to ensure that each bucket in the hash table initially points to an empty linked list, ready to store elements.
+          }
+        }
+
+        public int hashFunction(int key) {
+          return (key % size);
+      }
+  
+  
+      public void insertItem(int key) {
+          // get the hash index of key
+          int index = hashFunction(key);
+          // insert key into hash table at that index
+          table[index].add(key);
+      }
+  
+      public void displayHash() {
+          for (int i = 0; i < size; i++) {   //iterates through each bucket in the table array and prints the bucket index followed by the keys stored in the linked list at that index.
+              System.out.print(i);
+              for (int x : table[i]) {
+                  System.out.print(" --> " + x);
+              }
+              System.out.println();
+          }
+      }
+      
+      public static void main(String[] args) {
+        // array that contains keys to be mapped
+        int[] a = { 15, 11, 27, 8, 12, 3, 6};
+
+        Hash h = new Hash(7);
+
+        // insert the keys into the hash table
+        for (int x : a) {
+            h.insertItem(x);
+        }
+
+        // Display the hash table
+        h.displayHash();
     }
-}
+  
+    }
