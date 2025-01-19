@@ -28,10 +28,7 @@ public class YamlTokenizer {
     }
 
     public static void main(String[] args) {
-        String yamlContent = """
-        name: Project
-        version: 1
-        """;
+        String yamlContent = "name: Project\nversion: 1";
 
         List<String[]> tokens = tokenize(yamlContent);
 
