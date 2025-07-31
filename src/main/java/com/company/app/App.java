@@ -1,11 +1,9 @@
-package com.mycompany.app;
+package com.company.app;
+import java.lang.reflect.Method;
 
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, Maven!");
-        System.out.println("Arguments received:");
-        for (String arg : args) {
-            System.out.println("- " + arg);
-        }
+
+
     }
 }
