@@ -7,8 +7,7 @@ import static java.time.chrono.JapaneseEra.values;
 public class App {
     public static void main(String[] args) {
 
-        System.out.println("abc".toUpperCase() );
-
+        // Enum Lesson one
         DaysOfWeek sunday = DaysOfWeek.SUNDAY;
 
         if(sunday == DaysOfWeek.SUNDAY) {
